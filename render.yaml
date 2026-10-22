@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: arena-servidor
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: SIGN_API_KEY
+        sync: false
